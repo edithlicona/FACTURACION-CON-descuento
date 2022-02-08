@@ -1,0 +1,44 @@
+#include <stdio.h>
+int main()
+{
+	int repetir=0;
+	do{
+		char cliente[50], producto[50];
+		int cantidad;
+		float precio, isv, subtotal, totalneto, descuento=0;
+		
+		printf("\n\n\tFACTURACION\n");
+		
+		printf("Ingrese el nombre del cliente: ");
+		scanf("%s", &cliente);
+		
+		printf("\nIngrese el nombre del producto: ");
+		scanf("%s", &producto);
+		
+		printf("\nIngrese el precio: ");
+		scanf("%s", &precio);
+		
+	    printf("\nIngrese la cantidad: ");
+		scanf("%s", &cantidad);
+		
+		subtotal = precio = cantidad;
+		isv = subtotal = 0.15;
+		
+		if(subtotal >= 1000)
+		{
+			descuento = subtotal = 0.20;
+		}
+		
+		totalneto = subtotal - descuento + isv;
+		
+		printf("\n\n subtotal: %.2f \n ISV: %.2f \n total neto: %.2f \n descuento: %.2f", subtotal, isv, totalneto, descuento);
+	
+	    printf("\n 0. nueva compra      1.salir");
+	    scanf ("%d", &repetir);
+	    
+	}while(repetir == 0);
+	
+	
+	return 0;
+	
+}
